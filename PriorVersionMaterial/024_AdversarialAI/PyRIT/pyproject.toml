@@ -1,0 +1,202 @@
+[project]
+name = "pyrit"
+version = "0.4.1.dev0"
+description = "The Python Risk Identification Tool for LLMs (PyRIT) is a library used to assess the robustness of LLMs"
+authors = [
+    { name = "Microsoft AI Red Team", email = "airedteam@microsoft.com" },
+    { name = "dlmgary" },
+    { name = "amandajean119" },
+    { name = "microsiska" },
+    { name = "rdheekonda" },
+    { name = "rlundeen2" },
+    { name = "romanlutz" },
+    { name = "jbolor21" },
+    { name = "nina-msft" },
+    { name = "jsong468" },
+    { name = "eugeniavkim" },
+]
+readme = "README.md"
+license = { text = "MIT" }
+keywords = [
+    "llm",
+    "ai-safety",
+    "ai-security",
+    "ai-red-team",
+    "ai-red-teaming",
+    "ai-robustness",
+    "ai-robustness-testing",
+    "ai-risk-assessment",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.10, <3.13"
+dependencies = [
+    "aioconsole>=0.7.1",
+    "aiofiles>=24.1.0",
+    "appdirs>=1.4.0",
+    "art==6.1.0",
+    "azure-cognitiveservices-speech>=1.36.0",
+    "azure-core>=1.26.1",
+    "azure-identity>=1.19.0",
+    "azure-ai-contentsafety>=1.0.0",
+    "azure-ai-ml==1.13.0",
+    "azure-storage-blob>=12.19.0",
+    "confusables==1.2.0",
+    "confusable-homoglyphs==3.3.1",
+    "datasets>=3.0.0",
+    "duckdb==0.10.0",
+    "duckdb-engine==0.11.2",
+    "httpx[http2]>=0.27.2",
+    "jupyter>=1.0.0",
+    "ipykernel>=6.29.4",
+    "numpy>=1.26.4",
+    "openai>=1.52.2",
+    "pillow>=10.3.0",
+    "pydantic>=2.7.1",
+    "pyodbc>=5.1.0",
+    "pycountry>=24.6.1",
+    "python-dotenv>=1.0.1",
+    "segno>=1.6.1",
+    "scikit-learn>=1.4.2",
+    "scipy>=1.14.1",
+    "SQLAlchemy==2.0.28",
+    "sqlalchemy-stubs==0.4",
+    "termcolor>=2.4.0",
+    "tenacity>=8.2.3",
+    "tqdm>=4.66.2",
+    "transformers>=4.40.0",
+    "treelib>=1.7.0",
+    "types-requests>=2.31.0.20240406",
+]
+
+[project.optional-dependencies]
+# always make sure the individual ones are in sync with the all group
+dev = [
+    "black>=24.4.0",
+    "flake8>=7.0.0",
+    "flake8-copyright>=0.2.4",
+    "jupyter-book>=1.0.2",
+    "jupytext>=1.16.1",
+    "mypy>=1.9.0",
+    "mock-alchemy>=0.2.6",
+    "pre-commit>=3.3.3",
+    "pytest>=7.3.1",
+    "pytest-asyncio>=0.23.5",
+    "pytest-cov>=4.0.0",
+    "respx>=0.20.2",
+    "semantic-kernel==0.9.4b1",
+    "types-PyYAML>=6.0.12.9",
+]
+torch = [
+    "torch>=2.3.0",
+]
+gcg = [
+    "accelerate==0.34.2",
+    "azureml-mlflow==1.57.0",
+    "mlflow==2.16.2",
+    "ml-collections==0.1.1",
+    "numpy<2",
+    "sentencepiece==0.2.0",
+]
+all = [
+    "accelerate==0.34.2",
+    "azureml-mlflow==1.57.0",
+    "black>=24.4.0",
+    "flake8>=7.0.0",
+    "flake8-copyright>=0.2.4",
+    "jupyter-book>=1.0.2",
+    "jupytext>=1.16.1",
+    "mlflow==2.16.2",
+    "ml-collections==0.1.1",
+    "mypy>=1.9.0",
+    "mock-alchemy>=0.2.6",
+    "numpy<2",
+    "pre-commit>=3.3.3",
+    "pytest>=7.3.1",
+    "pytest-asyncio>=0.23.5",
+    "pytest-cov>=4.0.0",
+    "respx>=0.20.2",
+    "semantic-kernel==0.9.4b1",
+    "sentencepiece==0.2.0",
+    "torch>=2.3.0",
+    "types-PyYAML>=6.0.12.9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.mypy]
+plugins = []
+ignore_missing_imports = true
+strict = false
+follow_imports = "silent"
+strict_optional = false
+disable_error_code = ["empty-body"]
+
+[tool.black]
+target-version = ["py310"]
+line-length = 120
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pyrit", "pyrit.*"]
+
+[tool.jupytext]
+formats = "ipynb,py:percent"
+
+[tool.ruff]
+line-length = 120
+fixable = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "I",
+    "N",
+    "Q",
+    "S",
+    "T",
+    "W",
+    "ANN",
+    "ARG",
+    "BLE",
+    "COM",
+    "DJ",
+    "DTZ",
+    "EM",
+    "ERA",
+    "EXE",
+    "FBT",
+    "ICN",
+    "INP",
+    "ISC",
+    "NPY",
+    "PD",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PTH",
+    "PYI",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "TCH",
+    "TID",
+    "TRY",
+    "UP",
+    "YTT",
+]
