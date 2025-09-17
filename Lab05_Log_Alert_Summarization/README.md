@@ -1,7 +1,8 @@
 # Lab05: Log and Alert Summarization
 
 This lab is covered in a seperate github repository.
-Please clone or download this repo.
 
     https://github.com/RiverGumSecurity/AILabTools
 
+You can still use the **Lab05_Setup.sh** script to setup dependencies.
+The only requirement is the **openai** Python package.
