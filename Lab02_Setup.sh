@@ -5,6 +5,7 @@ fi
 LAB="lab02"
 LDIR="./Lab02_Deepfakes"
 conda deactivate
+rm -f $LDIR/poetry.lock
 `conda env list | grep -q $LAB` && (echo "Removing Existing $LAB conda env" && conda env remove -q --yes -n $LAB)
 conda create --yes -n $LAB python=3.10
 conda activate $LAB
